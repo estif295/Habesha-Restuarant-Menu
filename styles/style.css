@@ -1,0 +1,700 @@
+/* Dark mode toggle switch styles and variables */
+:root {
+    /* Light mode (default) variables */
+    --bg-color: #f9f5f0;
+    --header-bg: #5c3d2e;
+    --header-text: #f9f5f0;
+    --nav-link: #e6c9a8;
+    --nav-hover-bg: #d4a373;
+    --nav-hover-text: #5c3d2e;
+    --main-text: #5c3d2e;
+    --card-bg: #ffffff;
+    --card-border: #d4a373;
+    --card-hover-border: #5c3d2e;
+    --price-text: #b08968;
+    --button-bg: #5c3d2e;
+    --button-text: #f9f5f0;
+    --button-hover-bg: #d4a373;
+    --button-hover-text: #5c3d2e;
+    --footer-bg: #5c3d2e;
+    --footer-text: #e6c9a8;
+    --form-border: #e6c9a8;
+    --form-focus-border: #d4a373;
+    --star-color: #e6c9a8;
+    --star-selected: #d4a373;
+    --shadow-color: rgba(92, 61, 46, 0.1);
+    --shadow-hover: rgba(92, 61, 46, 0.2);
+}
+
+/* Dark mode variables */
+[data-theme="dark"] {
+    --bg-color: #1a1a1a;
+    --header-bg: #2c2c2c;
+    --header-text: #e0e0e0;
+    --nav-link: #b08968;
+    --nav-hover-bg: #5c3d2e;
+    --nav-hover-text: #f9f5f0;
+    --main-text: #d4a373;
+    --card-bg: #2c2c2c;
+    --card-border: #5c3d2e;
+    --card-hover-border: #d4a373;
+    --price-text: #d4a373;
+    --button-bg: #d4a373;
+    --button-text: #2c2c2c;
+    --button-hover-bg: #5c3d2e;
+    --button-hover-text: #f9f5f0;
+    --footer-bg: #2c2c2c;
+    --footer-text: #d4a373;
+    --form-border: #5c3d2e;
+    --form-focus-border: #d4a373;
+    --star-color: #5c3d2e;
+    --star-selected: #d4a373;
+    --shadow-color: rgba(0, 0, 0, 0.2);
+    --shadow-hover: rgba(0, 0, 0, 0.3);
+}
+
+/* Dark mode toggle switch */
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 15px;
+    right: 60px;
+    z-index: 1001;
+}
+
+.theme-switch {
+    display: inline-block;
+    height: 24px;
+    position: relative;
+    width: 50px;
+}
+
+.theme-switch input {
+    display: none;
+}
+
+.slider {
+    background-color: #ccc;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    background-color: white;
+    bottom: 4px;
+    content: "";
+    height: 16px;
+    left: 4px;
+    position: absolute;
+    transition: .4s;
+    width: 16px;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #d4a373;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.slider:after {
+    content: '☀️';
+    color: #5c3d2e;
+    display: block;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 70%;
+    font-size: 10px;
+}
+
+input:checked + .slider:after {
+    content: '🌙';
+    left: 30%;
+}
+
+/* Apply CSS variables to existing elements */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family:'Times New Roman', Times, serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    transition: background-color 0.3s ease;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--header-bg);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 0px;
+    box-shadow: 0 2px 10px var(--shadow-color);
+    transition: background-color 0.3s ease;
+}
+
+.header h1 {
+    padding: 5px;
+    margin: 5px 0;
+    color: var(--header-text);
+    font-size: 1.5rem; 
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+.header nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    padding: 5px;
+    margin: 0;
+}
+
+.header nav a {
+    padding: 5px;
+    margin: 3px;
+    padding-bottom: 0;
+    text-decoration: none;
+    color: var(--nav-link);
+    border-radius: 10px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.header nav a {
+    color: var(--header-text);
+    text-decoration: none;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.header nav a.active {
+    background-color: var(--nav-hover-bg);
+    color: var(--nav-hover-text);
+}
+
+.header nav a:hover {
+    background-color: var(--nav-hover-bg);
+    color: var(--nav-hover-text);
+}
+
+
+.cart-icon img {
+    width: 30px;
+    height: 25px;
+    border-radius: 5px;
+    filter: brightness(0) invert(1);
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px 0;
+    background-color: var(--header-text);
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
+}
+
+@media (max-width: 480px) {
+    .header nav {
+        display: none; 
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .header nav.active {
+        display: flex; 
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+    
+    .header {
+        align-items: flex-start;
+    }
+    
+    .header h1 {
+        margin-right: 50px; 
+    }
+    
+    .theme-switch-wrapper {
+        top: 15px;
+        right: 50px;
+    }
+}
+
+@media (min-width: 768px) {
+    .header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0;
+    }
+    
+    .header h1 {
+        font-size: 1.8rem;
+        margin: 10px;
+        text-align: left;
+    }
+    
+    .header nav {
+        width: auto;
+        margin: 7px;
+        margin-top: 20px;
+        justify-content: flex-end;
+    }
+    
+    .header nav a {
+        font-size: 1rem;
+        padding: 5px;
+    }
+    
+    .cart-icon img {
+        width: 40px;
+        height: 35px;
+    }
+    
+    .theme-switch-wrapper {
+        position: relative;
+        top: 0;
+        right: 0;
+        margin-right: 15px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .header h1 {
+        font-size: 2rem;
+    }
+    
+    .header nav a {
+        margin: 0 5px;
+    }
+}
+
+.main {
+    margin-top: 80px;
+    height: 400px;
+    width: 100%;
+    background-image: url('../images/bg-image.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+    filter: sepia(15%);
+}
+
+[data-theme="dark"] .main {
+    filter: sepia(15%) brightness(0.8);
+}
+
+.main::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../images/bg-photo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(1px) sepia(15%);
+    z-index: -1;
+}
+
+[data-theme="dark"] .main::before {
+    filter: blur(1px) sepia(15%) brightness(0.7);
+}
+
+.main h1 {
+    position: relative;
+    color: var(--header-text);
+    text-align: center;
+    padding: 20px;
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 100%;
+    padding: 15px 0;
+    border-radius: 0;
+    border-left: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.drinks, .foods {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.drink-type, .food-type {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.drinks h1, .foods h1 {
+    align-self: center;
+    color: var(--main-text);
+    padding: 30px;
+    margin: 15px;
+    transition: color 0.3s ease;
+}
+
+.drinks img, .foods img {
+    width: 150px;
+    height: 150px;
+    padding: 8px;
+    border-radius: 50%;
+    border: 3px solid var(--card-border);
+    filter: sepia(15%);
+    transition: all 0.3s ease, border-color 0.3s ease;
+}
+
+[data-theme="dark"] .drinks img, 
+[data-theme="dark"] .foods img {
+    filter: sepia(15%) brightness(0.9);
+}
+
+.drinks img:hover, .foods img:hover {
+    transform: scale(1.05);
+    border-color: var(--card-hover-border);
+}
+
+.traditional-drinks, .non-traditional-drinks, .vegetarial, .non-vegetarial {
+    display: flex;
+    flex-direction: column;
+}
+
+.drinks .traditional-drinks h2, .drinks .non-traditional-drinks h2, .vegetarial h2, .non-vegetarial h2 {
+    align-self: center;
+    padding: 10px;
+    margin: 10px;
+    color: var(--main-text);
+    transition: color 0.3s ease;
+}
+
+.tej, .tela, .areqe, .beer, .wine, .whisky, .aynet, .suf, .shuro, .gomen, .kitfo, .shekla, .doro, .kurt {
+    display: flex;
+    padding: 20px;
+    margin: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 10px 30px var(--shadow-color), 0 4px 6px rgba(92, 61, 46, 0.05);
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    border-left: 4px solid var(--card-border);
+}
+
+.tej:hover, .tela:hover, .areqe:hover, .beer:hover, .whisky:hover, .wine:hover, .aynet:hover, .suf:hover, .gomen:hover, .shuro:hover, .kurt:hover, .kitfo:hover, .shekla:hover, .doro:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 10px 20px var(--shadow-hover);
+    border-left: 4px solid var(--card-hover-border);
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.description h2 {
+    color: var(--main-text);
+    transition: color 0.3s ease;
+}
+
+.description h3 {
+    color: var(--price-text);
+    padding: 20px 0;
+    transition: color 0.3s ease;
+}
+
+.description button {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    padding: 8px 0px;
+    border: none;
+    border-radius: 25px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.description button:hover {
+    background-color: var(--button-hover-bg);
+    color: var(--button-hover-text);
+    border: none;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding: 20px;
+    margin-top: 30px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+details {
+    background: var(--card-bg);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px var(--shadow-color);
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: 0.3s, background-color 0.3s ease;
+    border: 1px solid var(--card-border);
+}
+
+details:hover {
+    box-shadow: 0 4px 8px var(--shadow-hover);
+}
+
+summary {
+    font-size: 10px;
+    font-weight: bold;
+    color: var(--main-text);
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+details p {
+    margin: 10px 0 0;
+    color: var(--main-text);
+    font-size: 8px;
+    transition: color 0.3s ease;
+}
+
+.feedback-section {
+    padding: 40px 20px;
+    background-color: var(--bg-color);
+    margin-top: 30px;
+    transition: background-color 0.3s ease;
+}
+
+.feedback-section h2 {
+    text-align: center;
+    color: var(--main-text);
+    margin-bottom: 30px;
+    transition: color 0.3s ease;
+}
+
+.feedback-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px var(--shadow-color);
+    border: 1px solid var(--card-border);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--main-text);
+    transition: color 0.3s ease;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--form-border);
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: var(--card-bg);
+    color: var(--main-text);
+    transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--form-focus-border);
+}
+
+.form-group textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+.rating {
+    margin-bottom: 20px;
+}
+
+.rating p {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--main-text);
+    transition: color 0.3s ease;
+}
+
+.stars {
+    display: flex;
+}
+
+.star {
+    font-size: 30px;
+    color: var(--star-color);
+    cursor: pointer;
+    transition: color 0.2s;
+    margin-right: 5px;
+}
+
+.star:hover,
+.star.selected {
+    color: var(--star-selected);
+}
+
+#submit-feedback {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+#submit-feedback:hover {
+    background-color: var(--button-hover-bg);
+    color: var(--button-hover-text);
+    border: none;
+}
+
+.comments-container {
+    max-width: 800px;
+    margin: 40px auto 0;
+}
+
+.comments-container h3 {
+    text-align: center;
+    color: var(--main-text);
+    margin-bottom: 20px;
+    transition: color 0.3s ease;
+}
+
+.comment {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px var(--shadow-color);
+    margin-bottom: 20px;
+    border: 1px solid var(--form-border);
+    border-left: 4px solid var(--card-border);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+.comment-header h4 {
+    margin: 0;
+    color: var(--main-text);
+    transition: color 0.3s ease;
+}
+
+.comment-rating {
+    display: flex;
+}
+
+.comment-rating .star {
+    font-size: 16px;
+    margin-right: 2px;
+    color: var(--star-selected);
+}
+
+.comment-date {
+    color: var(--price-text);
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.comment-text {
+    color: var(--main-text);
+    line-height: 1.5;
+    transition: color 0.3s ease;
+}
+
+.no-comments {
+    text-align: center;
+    color: var(--price-text);
+    font-style: italic;
+    transition: color 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .comment-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .comment-rating {
+        margin: 5px 0;
+    }
+    
+    .theme-switch-wrapper {
+        top: 15px;
+        right: 50px;
+    }
+}
+
+

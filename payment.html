@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <link rel="stylesheet" href="styles/payment.css">
+</head>
+<body>
+    <div id="payment-section" class="payment-container">
+        <h2>Complete Your Payment</h2>
+
+        <!-- Accepted Payment Methods -->
+        <div class="payment-methods">
+            <h4>Accepted Payment Methods</h4>
+            <label><input type="radio" name="payment-method" value="Awash Bank"> Awash Bank</label>
+            <label><input type="radio" name="payment-method" value="CBE"> Commercial Bank of Ethiopia (CBE)</label>
+            <label><input type="radio" name="payment-method" value="BOA"> Bank of Abyssinia (BOA)</label>
+            <label><input type="radio" name="payment-method" value="Dashen Bank"> Bank of Abyssinia (BOA)</label>
+        </div>
+
+        <!-- Billing Information -->
+        <div class="billing-info">
+            <h4>Billing Information</h4>
+            <input type="text" id="full-name" placeholder="Full Name" required>
+            <input type="text" id="phone-number" placeholder="Phone Number" required>
+            <input type="number" id="bank-account" placeholder="Bank Account Number" required>
+        </div>
+
+        <!-- Screenshot Upload -->
+        <div class="screenshot-upload">
+            <h4>Upload Payment Screenshot or Bill Photo</h4>
+            <input type="file" id="screenshot" accept="image/*">
+            <img id="screenshot-preview" src="" alt="Screenshot Preview" style="display: none; max-width: 100%; margin-top: 10px;">
+        </div>
+
+        <!-- Order Summary -->
+        <div class="order-summary">
+            <h4>Order Summary</h4>
+            <p id="order-total">Total: 0.00 Birr</p>
+        </div>
+
+        <!-- Confirm & Cancel Buttons -->
+        <button id="confirm-payment-btn">Confirm Payment</button>
+        <button id="cancel-payment-btn">Cancel</button>
+
+        <p id="payment-status" style="color: green; display: none;">Payment Successful!</p>
+    </div>
+
+    <script src="scripts/payment.js"></script>
+</body>
+</html>

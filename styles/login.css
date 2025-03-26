@@ -1,0 +1,126 @@
+/* Login page styles with dark mode support */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 120px 20px 40px;
+    background-color: var(--bg-color);
+    transition: background-color 0.3s ease;
+}
+
+.auth-form {
+    width: 100%;
+    max-width: 450px;
+    padding: 30px;
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: 0 10px 30px var(--shadow-color), 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    border: 1px solid var(--card-border);
+}
+
+.auth-form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px var(--shadow-hover);
+}
+
+.auth-form h2 {
+    text-align: center;
+    color: var(--main-text);
+    margin-bottom: 25px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--main-text);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--form-border);
+    border-radius: 25px;
+    transition: border-color 0.3s, background-color 0.3s, color 0.3s;
+    background-color: var(--card-bg);
+    color: var(--main-text);
+}
+
+.form-control:focus {
+    border-color: var(--form-focus-border);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(212, 163, 115, 0.25);
+}
+
+.remember-me, .terms {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.remember-me label {
+    color: var(--main-text);
+    transition: color 0.3s ease;
+}
+
+.auth-button {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+    margin-top: 10px;
+}
+
+.auth-button:hover {
+    background-color: var(--button-hover-bg);
+    color: var(--button-hover-text);
+}
+
+.auth-link {
+    text-align: center;
+    margin-top: 20px;
+    color: var(--main-text);
+    transition: color 0.3s ease;
+}
+
+.auth-link a {
+    color: var(--price-text);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.auth-link a:hover {
+    text-decoration: underline;
+    color: var(--button-hover-bg);
+}
+
+.error-message {
+    color: #dc3545;
+    font-size: 14px;
+    margin-top: 5px;
+    display: none;
+}
+
+/* Dark mode specific overrides */
+[data-theme="dark"] .form-control::placeholder {
+    color: #999;
+}
+
+[data-theme="dark"] input[type="checkbox"] {
+    accent-color: var(--button-bg);
+}

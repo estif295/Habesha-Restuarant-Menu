@@ -1,0 +1,312 @@
+Estife, [3/24/2025 1:28 PM]
+/* payment.css - Enhanced styling for payment page */
+
+/* Variables for consistent color scheme - matching site theme */
+
+body {
+    background-color: rgba(212, 163, 115, 0.1);
+    color: var(--main-text);
+}
+:root {
+    /* Primary Ethiopian-themed colors */
+    --primary-color: #5c3d2e; /* Brown - Ethiopian coffee */
+    --secondary-color: #d4a373; /* Gold/tan - Ethiopian traditional colors */
+    --accent-color: #b08968; /* Lighter brown accent */
+    
+    /* Background and text colors */
+    --bg-color: #f9f5f0; /* Light cream background */
+    --card-bg: #ffffff; /* White card background */
+    --main-text: #5c3d2e; /* Dark brown text */
+    --light-text: #f9f5f0; /* Light cream text */
+    
+    /* Form and interactive elements */
+    --input-bg: #f9f5f0; /* Light input background */
+    --input-border: #e6c9a8; /* Light border */
+    --input-focus-border: #d4a373; /* Focus border */
+    --button-bg: #5c3d2e; /* Button background */
+    --button-text: #f9f5f0; /* Button text */
+    --button-hover-bg: #d4a373; /* Button hover */
+    --button-hover-text: #5c3d2e; /* Button hover text */
+    
+    /* Status colors */
+    --success-color: #4CAF50; /* Green for success */
+    --error-color: #F44336; /* Red for errors */
+    
+    /* Effects */
+    --shadow-color: rgba(92, 61, 46, 0.1); /* Shadow color */
+    --shadow-hover: rgba(92, 61, 46, 0.2); /* Hover shadow */
+}
+
+/* Dark mode variables */
+[data-theme="dark"] {
+    --primary-color: #5c3d2e; /* Slightly lighter brown */
+    --secondary-color: #b08968; /* Darker gold */
+    --accent-color: #d4a373; /* Accent color */
+    
+    --bg-color: #1a1a1a; /* Dark background */
+    --card-bg: #2c2c2c; /* Dark card background */
+    --main-text: #d4a373; /* Light brown text */
+    --light-text: #e0e0e0; /* Light text */
+    
+    --input-bg: #3d3d3d; /* Dark input background */
+    --input-border: #5c3d2e; /* Dark border */
+    --input-focus-border: #d4a373; /* Focus border */
+    --button-bg: #d4a373; /* Button background */
+    --button-text: #2c2c2c; /* Button text */
+    --button-hover-bg: #5c3d2e; /* Button hover */
+    --button-hover-text: #f9f5f0; /* Button hover text */
+    
+    --shadow-color: rgba(0, 0, 0, 0.2); /* Shadow color */
+    --shadow-hover: rgba(0, 0, 0, 0.3); /* Hover shadow */
+}
+
+/* Base styles */
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: var(--bg-color);
+    color: var(--main-text);
+    margin: 0;
+    padding: 0;
+    transition: all 0.3s ease;
+}
+
+/* Payment container styling */
+.payment-container {
+    max-width: 800px;
+    margin: 40px auto;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 8px 20px var(--shadow-color);
+    padding: 30px;
+    border-left: 5px solid var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.payment-container h2 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-top: 0;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--secondary-color);
+    text-align: center;
+}
+
+.payment-container h4 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-top: 20px;
+    margin-bottom: 12px;
+}
+
+/* Payment methods styling */
+.payment-methods {
+    margin-bottom: 25px;
+}
+
+.payment-methods label {
+    display: block;
+    margin-bottom: 12px;
+    cursor: pointer;
+    padding: 10px 15px;
+    border: 1px solid var(--input-border);
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    background-color: var(--card-bg);
+}
+
+.payment-methods label:hover {
+    border-color: var(--secondary-color);
+    background-color: rgba(212, 163, 115, 0.05);
+}
+
+.payment-methods input[type="radio"] {
+    margin-right: 10px;
+    accent-color: var(--primary-color);
+}
+
+/* Billing information styling */
+.billing-info {
+    margin-bottom: 25px;
+}
+
+.billing-info input,
+.payment-amount input,
+.screenshot-upload input[type="file"] {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border: 1px solid var(--input-border);
+    border-radius: 6px;
+    background-color: var(--input-bg);
+    color: var(--main-text);
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+Estife, [3/24/2025 1:28 PM]
+.billing-info input:focus,
+.payment-amount input:focus {
+    outline: none;
+    border-color: var(--input-focus-border);
+    box-shadow: 0 0 0 2px rgba(212, 163, 115, 0.2);
+}
+
+/* Payment amount styling */
+.payment-amount {
+    margin-bottom: 25px;
+}
+
+/* Screenshot upload styling */
+.screenshot-upload {
+    margin-bottom: 25px;
+}
+
+.screenshot-upload input[type="file"] {
+    padding: 10px;
+    background-color: var(--input-bg);
+    border: 1px dashed var(--input-border);
+}
+
+.screenshot-upload input[type="file"]:hover {
+    border-color: var(--secondary-color);
+}
+
+/* Order summary styling */
+.order-summary {
+    margin-bottom: 25px;
+    padding: 15px;
+    background-color: rgba(212, 163, 115, 0.1);
+    border-radius: 6px;
+    border-left: 3px solid var(--secondary-color);
+}
+
+.order-summary h4 {
+    margin-top: 0;
+    color: var(--primary-color);
+}
+
+#order-total {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+/* Button styling */
+#confirm-payment-btn,
+#cancel-payment-btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+#confirm-payment-btn {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    margin-right: 10px;
+}
+
+#confirm-payment-btn:hover {
+    background-color: var(--button-hover-bg);
+    color: var(--button-hover-text);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+#cancel-payment-btn {
+    background-color: #f5f5f5;
+    color: #666;
+    border: 1px solid #ddd;
+}
+
+#cancel-payment-btn:hover {
+    background-color: #e0e0e0;
+    color: #333;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Payment status message */
+#payment-status {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: bold;
+    background-color: rgba(76, 175, 80, 0.1);
+    border-left: 3px solid var(--success-color);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive design */
+@media (min-width: 768px) {
+    /* Two-column layout for buttons on larger screens */
+    .button-group {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    #confirm-payment-btn,
+    #cancel-payment-btn {
+        flex: 1;
+        margin: 0 10px;
+    }
+    
+    #confirm-payment-btn {
+        margin-left: 0;
+    }
+    
+    #cancel-payment-btn {
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    .payment-container {
+        margin: 20px;
+        padding: 20px;
+    }
+    
+    #confirm-payment-btn,
+    #cancel-payment-btn {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
+
+/* Screenshot preview styling */
+#screenshot-preview {
+    border-radius: 6px;
+    border: 1px solid var(--input-border);
+    transition: all 0.3s ease;
+}
+
+/* Focus styles for accessibility */
+input:focus, 
+button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--secondary-color);
+}
+
+/* Hover effects for interactive elements */
+input:hover,
+button:hover {
+    transition: all 0.3s ease;
+}
+
+/* Add a subtle hover effect to the entire payment container */
+.payment-container:hover {
+    box-shadow: 0 12px 30px var(--shadow-hover);
+}

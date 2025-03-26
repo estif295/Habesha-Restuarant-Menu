@@ -1,0 +1,284 @@
+/* Cart specific styles with CSS variables for dark mode compatibility */
+.cart-container {
+    margin-top: 100px;
+    padding: 20px;
+    background-color: var(--bg-color);
+    transition: background-color 0.3s ease;
+}
+
+.cart-title {
+    color: var(--main-text);
+    text-align: center;
+    margin-bottom: 30px;
+    transition: color 0.3s ease;
+}
+
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    background-color: var(--card-bg);
+    transition: background-color 0.3s ease;
+}
+
+.cart-table th {
+    background-color: var(--header-bg);
+    color: var(--header-text);
+    padding: 12px;
+    text-align: left;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.cart-table td {
+    padding: 12px;
+    border-bottom: 1px solid var(--card-border);
+    color: var(--main-text);
+    transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+.cart-item-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--card-border);
+    transition: border-color 0.3s ease;
+}
+
+[data-theme="dark"] .cart-item-image {
+    filter: brightness(0.9);
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+}
+
+.quantity-btn {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.quantity-btn:hover {
+    background-color: var(--button-hover-bg);
+    color: var(--button-hover-text);
+}
+
+.quantity-input {
+    width: 40px;
+    text-align: center;
+    margin: 0 10px;
+    border: 1px solid var(--card-border);
+    border-radius: 5px;
+    padding: 5px;
+    background-color: var(--card-bg);
+    color: var(--main-text);
+    transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.remove-btn {
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.remove-btn:hover {
+    background-color: #ff5252;
+}
+
+.cart-summary {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px var(--shadow-color);
+    border: 1px solid var(--card-border);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.cart-summary h3 {
+    color: var(--main-text);
+    margin-bottom: 20px;
+    transition: color 0.3s ease;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    color: var(--main-text);
+    transition: color 0.3s ease;
+}
+
+.total-row {
+    font-weight: bold;
+    border-top: 1px solid var(--card-border);
+    padding-top: 10px;
+    margin-top: 10px;
+    transition: border-color 0.3s ease;
+}
+
+#checkout-btn {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    padding: 12px 20px;
+    border-radius: 25px;
+    width: 100%;
+    font-size: 16px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.checkout-btn:hover {
+    background-color: var(--button-hover-bg);
+    color: var(--button-hover-text);
+}
+
+.empty-cart {
+    text-align: center;
+    padding: 50px;
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px var(--shadow-color);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.empty-cart h3 {
+    color: var(--main-text);
+    transition: color 0.3s ease;
+}
+
+.empty-cart p {
+    color: var(--main-text);
+    transition: color 0.3s ease;
+}
+
+.continue-shopping {
+    display: inline-block;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+
+.continue-shopping:hover {
+    background-color: var(--button-hover-bg);
+    color: var(--button-hover-text);
+    text-decoration: none;
+}
+
+/* Nutrition and Alcohol Summary Styles */
+.nutrition-alcohol-summary {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e0e0e0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+[data-theme="dark"] .nutrition-alcohol-summary {
+    background-color: #2d2d2d;
+    border-color: #444;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.nutrition-alcohol-summary h3 {
+    color: #5c3d2e;
+    margin-bottom: 15px;
+}
+
+[data-theme="dark"] .nutrition-alcohol-summary h3 {
+    color: #e6b17e;
+}
+
+.nutrition-section, .alcohol-section {
+    margin-bottom: 20px;
+}
+
+.nutrition-section h4, .alcohol-section h4 {
+    color: #5c3d2e;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+[data-theme="dark"] .nutrition-section h4, 
+[data-theme="dark"] .alcohol-section h4 {
+    color: #e6b17e;
+    border-bottom-color: #444;
+}
+
+.nutrition-row, .alcohol-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+[data-theme="dark"] .nutrition-row, 
+[data-theme="dark"] .alcohol-row {
+    color: #ddd;
+}
+
+.alcohol-warning {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.alcohol-warning.low {
+    background-color: rgba(76, 175, 80, 0.2);
+    color: #2e7d32;
+}
+
+.alcohol-warning.moderate {
+    background-color: rgba(255, 193, 7, 0.2);
+    color: #ff8f00;
+}
+
+.alcohol-warning.high {
+    background-color: rgba(244, 67, 54, 0.2);
+    color: #d32f2f;
+}
+
+[data-theme="dark"] .alcohol-warning.low {
+    background-color: rgba(76, 175, 80, 0.3);
+    color: #81c784;
+}
+
+[data-theme="dark"] .alcohol-warning.moderate {
+    background-color: rgba(255, 193, 7, 0.3);
+    color: #ffd54f;
+}
+
+[data-theme="dark"] .alcohol-warning.high {
+    background-color: rgba(244, 67, 54, 0.3);
+    color: #e57373;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .nutrition-alcohol-summary {
+        margin-top: 20px;
+    }
+}
