@@ -698,3 +698,57 @@ details p {
 }
 
 
+.contact-section {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: var(--bg-color);
+    color: var(--main-text);
+    border-top: 2px solid var(--card-border);
+    margin-top: 30px;
+}
+
+.contact-section h2 {
+    font-size: 24px;
+    color: var(--main-text);
+    margin-bottom: 15px;
+}
+
+.contact-section p {
+    font-size: 18px;
+    margin: 8px 0;
+    color: var(--main-text);
+}
+
+.contact-section a {
+    color: var(--nav-link);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-section a:hover {
+    color: var(--nav-hover-bg);
+    text-decoration: underline;
+}
+
+.social-media {
+    margin-top: 20px;
+}
+
+.social-media h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: var(--main-text);
+}
+
+.social-media a img {
+    width: 40px;
+    height: 40px;
+    margin: 0 10px;
+    transition: transform 0.3s ease;
+    filter: brightness(0.9);
+}
+
+.social-media a img:hover {
+    transform: scale(1.2);
+    filter: brightness(1);
+}

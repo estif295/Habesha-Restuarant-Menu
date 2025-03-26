@@ -1,4 +1,3 @@
-Estife, [3/24/2025 1:28 PM]
 /* payment.css - Enhanced styling for payment page */
 
 /* Variables for consistent color scheme - matching site theme */
@@ -145,7 +144,7 @@ body {
     box-sizing: border-box;
 }
 
-Estife, [3/24/2025 1:28 PM]
+
 .billing-info input:focus,
 .payment-amount input:focus {
     outline: none;
@@ -310,3 +309,4 @@ button:hover {
 .payment-container:hover {
     box-shadow: 0 12px 30px var(--shadow-hover);
 }
+
